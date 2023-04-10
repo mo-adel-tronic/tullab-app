@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tullab-App</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+</head>
+<body>
+
+    <!-------------------- Start Event Title ----------------------->
+    <div class="tullab-container mt-3">
+        <h1><i class="fa-solid fa-arrow-left me-3"></i>Complete event information</h1>
+    </div>
+    <!-------------------- End Event Title ----------------------->
+
+    <!-------------------- Start Form Steps --------------------->
+    <div class="tullab-container overflow-hidden py-4">
+
+        <!-------------------- Start Step Points --------------------->
+        <!-- Next And Prev Action use class step-n for toggle -->
+        <div class="step-points mb-5 step-3">
+            <!-- when step is finished => .finished -->
+            <div class="step finished text-center">
+                <span><i class="fa-solid fa-check"></i></span>
+                <h2>Basic Information of event</h2>
+            </div>
+
+            <div class="step finished text-center">
+                <span><i class="fa-solid fa-check"></i></span>
+                <h2>Location of event</h2>
+            </div>
+
+             <!-- when step is active => .active -->
+            <div class="step active text-center">
+                <span><i class="fa-solid fa-circle"></i></span>
+                <h2>Event’s Goals</h2>
+            </div>
+
+            <!-- when step is next => .next -->
+            <div class="step next text-center">
+                <span></span>
+                <h2>More Details</h2>
+            </div>
+            <div class="step next text-center">
+                <span></span>
+                <h2>Attachments</h2>
+            </div>
+        </div>
+        <!-------------------- End Step Points --------------------->
+
+        <!-------------------- Start Step Form Fields --------------------->
+        <div class="form-data">
+            <div class="step-3">
+                <div id="formGoals">
+                    <!-- Add Goals Here -->
+                </div>
+    
+                <div class="input-group mb-5">
+                    <input type="text" 
+                    id="goalAddInput"
+                    class="form-control" 
+                    placeholder="Goal to achieve" aria-label="Goal to achieve" aria-describedby="goalAdd">
+    
+                    <span class="input-group-text" id="goalAdd">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="hide">
+                step 4
+            </div>
+            <div class="navigate d-flex justify-content-between">
+                <button onclick="goStep(2)">
+                    <i class="fa-solid fa-arrow-left me-1"></i>
+                    Previous
+                </button>
+                <button onclick="goStep(4)">
+                    Next
+                </button>
+            </div>
+        </div>
+        <!-------------------- End Step Form Fields --------------------->
+
+    </div>
+    <!-------------------- Start Form Steps --------------------->
+
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

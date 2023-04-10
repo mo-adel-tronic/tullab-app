@@ -1,0 +1,58 @@
+// Start Step Point Section
+.step-points {
+    display: flex;
+    width: max-content;
+    gap: $spacer;
+    > div.step {
+        position: relative;
+        z-index: 2;
+        @include get-step('finished');
+        @include get-step('active');
+        @include get-step('next');
+        &:not(.next) h2 {
+            color: $main-color;
+        }
+        &.next h2 {
+            color: $gray-1;
+        }
+    }
+    @for $i from 1 through $steps {
+        $per-step: 100% / $steps;
+        &.step-#{$i} {
+            transform: translateX(calc($per-step - ($per-step * ($i - 1)) - 3em));
+            -webkit-transform: translateX(calc($per-step - ($per-step * ($i - 1)) - 3em));
+            -moz-transform: translateX(calc($per-step - ($per-step * ($i - 1)) - 3em));
+            -ms-transform: translateX(calc($per-step - ($per-step * ($i - 1)) - 3em));
+            -o-transform: translateX(calc($per-step - ($per-step * ($i - 1)) - 3em));
+}
+    }
+    transition: $animate;
+}
+
+// Form Data
+.form-data {
+    .hide {
+        display: none;
+    }
+    transition: $animate;
+}
+.navigate button {
+    font-size: $font-size-root;
+    text-align: center;
+    padding: 0.8em 0;
+    width: 40%;
+    border-radius: 5px;
+    &:first-of-type
+    {
+        border: 1px solid $main-color;
+        color: $main-color;
+    }
+    &:last-of-type, &:first-of-type:hover {
+        background-color: $main-color;
+        color: $white;
+    }
+    &:last-of-type:hover {
+        background-color: $main-color-hover;
+    }
+    transition: $animate;
+}

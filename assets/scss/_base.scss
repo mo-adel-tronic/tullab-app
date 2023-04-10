@@ -1,0 +1,147 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    font-size: $font-size-root;
+  }
+  
+  *,
+  *::before,
+  *::after,
+  input[type="search"] {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-size: $font-size-base;
+    font-family: 'Product Sans';
+    line-height: $line-height-base;
+  }
+  body,
+  html {
+    height: 100%;
+  }
+  blockquote,
+  dd,
+  dl,
+  figure,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  pre {
+    margin: 0;
+  }
+  button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+  button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  } 
+  iframe {
+    border: 0;
+  } 
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  //
+  // Make images responsive.
+  //
+  
+  img {
+    max-width: 100%;
+  } 
+  [tabindex="-1"]:focus {
+    outline: none !important;
+  }
+  //
+  // Remove delay from tapping on clickable elements.
+  //
+  
+  a,
+  area,
+  button,
+  input,
+  label,
+  select,
+  textarea,
+  [tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+  }
+
+
+  // Set Tags
+  h1 {
+    font-size: $font-size-root + 4
+  }
+  h2 {
+    font: {
+      size: $font-size-root - 4;
+      weight: bold;
+    }
+  }
+
+  // Set Classes And Bootstrap resets
+  .tullab-container {
+    @include make-container($font-size-root);
+  }
+  .form-control {
+    border: 1px solid $gray-1;
+    font-size: 12px;
+    padding: 1.25em $font-size-root;
+    &:focus {
+      border-color: $gray-1;
+      box-shadow: none;
+    }
+  }
+  .input-group {
+    &.goal {
+      .form-control {
+        border-#{change-dir('right', 'left')}: 1px solid $danger;
+      }
+      transition: $animate;
+}
+    .input-group-text {
+      background-color: $main-color;
+      color: $white;
+      padding: $font-size-root;
+      cursor: pointer;
+      i {
+        border: 2px solid $white;
+        padding: 3px;
+        border-radius: 5px;
+  }
+    &.delete-data {
+      background-color: $white;
+      border: 1px solid $danger;
+      color: $danger;
+      &:hover {
+        background-color: $danger;
+        color: $white;
+      }
+    }
+    transition: $animate;
+    &:hover {
+      background-color: $main-color-hover;
+    }
+}
+  }
+  .form-control:disabled, .form-control[readonly] {
+    background-color: $white;
+  }
+  

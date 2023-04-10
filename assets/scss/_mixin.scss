@@ -1,0 +1,85 @@
+// *************** Mixins ****************
+
+// Custom Container
+@mixin make-container($padding-x: $container-padding-x) {
+    width: 100%;
+    padding-right: $padding-x;
+    padding-left: $padding-x;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Step mixin
+@mixin single-step($state) {
+    background-color: $white;
+    position: relative;
+    z-index: 2;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 0.5em;
+    @if ($state == 'next') {
+        border: 1px solid $gray-1;
+    } @else {
+        background-color: if($state == 'finished', $main-color, $white);
+        @if($state == 'active') {
+            border: 1px solid $main-color;
+        }
+        color: if($state == 'finished', $white, $main-color);
+    }
+}
+@mixin get-step($class) {
+    &.#{$class} {
+        span {
+            @include single-step(#{$class});
+            i {
+                font-size: 9px;
+            }
+        }
+        &:not(.step:last-child)::after {
+            content: "";
+            display: block;
+            width: 100%;
+            @if ($class == 'finished') {
+                height: 3px;
+                background: $main-color;
+            } @else {
+                height: 1px;
+                background-color: $gray-1;
+            }
+            position: absolute;
+            top: 8.5px;
+            #{$dir}
+            : 50%;
+            z-index: 1;
+}
+        &:nth-child(n+2)::before {
+            content: "";
+            display: block;
+            width: 100%;
+            @if ($class == 'finished' or $class == 'active') {
+                height: 3px;
+                background: $main-color;
+            } @else {
+                height: 1px;
+                background-color: $gray-1;
+            }
+            position: absolute;
+            top: 8.5px;
+            #{$dir}
+            : -50%;
+            z-index: 1;
+        }
+    }
+}
+
+// *************** Functions **************
+@function change-dir($left-dir, $right-dir) {
+    @if $dir == 'left' {
+        @return $left-dir;
+    }
+    @return $right-dir;
+}

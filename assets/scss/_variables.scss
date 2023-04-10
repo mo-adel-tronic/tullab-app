@@ -1,0 +1,50 @@
+//
+// Typography
+//
+
+$font-size-root:         16px;
+$font-size-base:         1rem;
+$font-product-path: '../fonts/ProductSans';
+$line-height-base:       1.5;
+
+//
+// Colors
+//
+
+$white: #fff;
+$gray-1: #BBBBBB;
+$main-color: #4D0790;
+$main-color-hover: #3b036e;
+$danger: #CB544B;
+
+//
+// Breakpoints
+//
+
+$xs-viewport: 375px;
+$sm-viewport: 560px;
+$md-viewport: 760px;
+$lg-viewport: 960px;
+
+//
+// Spacing
+//
+
+$spacer: 2rem;
+
+//
+// Direction
+//
+
+$dir: left;
+
+//
+// Animation
+//
+
+$animate: 0.5s;
+
+//
+// Content
+//
+$steps: 5;

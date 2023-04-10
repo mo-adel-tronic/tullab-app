@@ -1,0 +1,18 @@
+// Theme
+@import "variables";
+@import "mixin";
+
+@font-face {
+  src: url("#{$font-product-path}-Bold.ttf");
+  font-family: 'Product Sans';
+  font-weight: 700;
+}
+@font-face {
+  src: url("#{$font-product-path}-Reg.ttf");
+  font-family: 'Product Sans';
+  font-weight: 400;
+}
+
+// Reset
+@import "base";
+@import "main";

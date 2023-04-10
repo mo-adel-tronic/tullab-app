@@ -1,0 +1,24 @@
+{
+  "name": "tullab-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:dev": "sass --watch --embed-source-map assets/scss:assets/css",
+    "sass:build": "sass --no-source-map --style=compressed assets/scss:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mo-adel-tronic/tullab-app.git"
+  },
+  "author": "Mohamed Abouzaid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mo-adel-tronic/tullab-app/issues"
+  },
+  "homepage": "https://github.com/mo-adel-tronic/tullab-app#readme",
+  "dependencies": {
+    "sass": "^1.61.0"
+  }
+}
